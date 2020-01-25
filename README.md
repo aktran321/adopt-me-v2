@@ -66,3 +66,15 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `yarn build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+just do create react app and webpack will do react for you
+
+need .eslintrc.json
+.gitignore
+.prettierrc
+package-lock.json
+package.json (npm init -y)
+this will have dependencies
+eslint
+eslint-config-prettier
+prettier
