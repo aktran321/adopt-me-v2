@@ -78,3 +78,5 @@ this will have dependencies
 eslint
 eslint-config-prettier
 prettier
+react
+react-dom
