@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { ANIMALS } from "@frontendmasters/pet";
-import useDropdowm from "./useDropdown";
+import useDropdown from "./useDropdown";
 
 const SearchParams = () => {
   const [location, setLocation] = useState("Seattle, WA");
   const [breeds, setBreeds] = useState([]);
-  const [animal, animalDropdown] = useDropdowm("Animal", "dog", ANIMALS);
-  const [breed, breedDropdown] = useDropdowm("Breed", "", breeds);
+  const [animal, AnimalDropdown] = useDropdown("Animal", "dog", ANIMALS);
+  const [breed, BreedDropdown] = useDropdown("Breed", "", breeds);
   return (
     <div className="search-params">
       <h1>{location}</h1>
@@ -22,6 +22,8 @@ const SearchParams = () => {
             }}
           />
         </label>
+        <AnimalDropdown />
+        <BreedDropdown />
         <button>Submit</button>
       </form>
     </div>
