@@ -1,15 +1,21 @@
 //Prettier dependemcy is cauaing this to be structured this way
 import React from "react";
 import { render } from "react-dom";
-import ReactDOM from "react-dom";
+import { Router, Link } from "@reach/router";
 import SearchParams from "./SearchParams";
+import Details from "./Details";
 
 const App = () => {
   return (
     <React.StrictMode>
       <div>
         <h1 id="something-important">Adopt Me!</h1>
-        <SearchParams />
+        {/* we put two different components inside of Router so that
+        we render them separately */}
+        <Router>
+          <SearchParams path="/" />
+          <Details path="/details/:id" />
+        </Router>
       </div>
     </React.StrictMode>
   );
