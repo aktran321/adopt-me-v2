@@ -9,7 +9,9 @@ const App = () => {
   return (
     <React.StrictMode>
       <div>
-        <h1 id="something-important">Adopt Me!</h1>
+        <header>
+          <Link to="/">Adopt Me!</Link>
+        </header>
         {/* we put two different components inside of Router so that
         we render them separately */}
         <Router>
