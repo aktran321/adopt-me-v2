@@ -1,6 +1,7 @@
 import React from "react";
-import Pet from "@frontendmasters/pet";
+import pet from "@frontendmasters/pet";
 import Carousel from "./Carousel";
+import ErrorBoundary from "./ErrorBoundary";
 
 // this is a Class Component
 // it will only work with a render inside
@@ -17,7 +18,8 @@ class Details extends React.Component {
   // this.props is information you get from parent class that is handed
   // down to you
   componentDidMount() {
-    Pet.animal(this.props.id).then(({ animal }) =>
+    throw new Error("rofl");
+    pet.animal(this.props.id).then(({ animal }) =>
       // this.setState will update this.state
       this.setState({
         name: animal.name,
@@ -52,4 +54,10 @@ class Details extends React.Component {
     );
   }
 }
-export default Details;
+export default function DetailsWithErrorBoundary(props) {
+  return (
+    <ErrorBoundary>
+      <Details {...props} />
+    </ErrorBoundary>
+  );
+}
